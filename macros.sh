@@ -34,6 +34,7 @@ DB="grupochat"
 GROUP_ID="2"
 DBUSER="nia"
 SENDER="ptcruiser"
+# static content: where are things like videos or pictures of your keytags hosted?
 STATIC_URL="https://static.neveralonerc.org"
 
 # should be a relative path like ~/tmp/chatbot.lck
@@ -43,7 +44,7 @@ STATIC_URL="https://static.neveralonerc.org"
 LOCK="/tmp/chatbot.lock"
 # URL to server
 # ie: http://127.0.0.1 if applicable
-# its a remote server in our case
+# for most people this will be your grupochat instance. its a remote (clustered) server in our case
 URL="http://api.neveralonerc.org/api_request/"
 
 if [[ $(find "$LOCK" -mmin +2 2>/dev/null) ]]; then
