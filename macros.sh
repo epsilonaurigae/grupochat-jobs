@@ -7,6 +7,9 @@
 # please see https://github.com/epsilonaurigae/legacy-jftbot/blob/main/README.md for more info on 
 # lost functionalities from moving off of an ircii/bx based IRC chat robot.
 
+# i suppose you may want to also change the sender name from ptcruiser, I will change some more of this stuff to variables on 
+# a future iteration.
+
 # getting down to business...
 # horrible way of doing this, when it can be invoked directly from PHP when a message is sent
 # until then
