@@ -1,4 +1,5 @@
 #!/bin/bash
+# TO-DOS: meeting state, timers, moderation commands, or eventually replacing the polling with direct PHP hooks or WebSockets.
 
 # 07-13-2026 adds logic to enforce membership in groups 3 or 6. 
 # defined at line 420:               AND gm.group_role_id IN (3, 6)
@@ -12,13 +13,17 @@
 
 # getting down to business...
 # horrible way of doing this, when it can be invoked directly from PHP when a message is sent
-# until then
+# until then, invoke from crontab:
+# example
 #* * * * * /home/nia/sqljobs/macros.sh
 #* * * * * sleep 10; /home/nia/sqljobs/macros.sh
 #* * * * * sleep 20; /home/nia/sqljobs/macros.sh
 #* * * * * sleep 30; /home/nia/sqljobs/macros.sh
 #* * * * * sleep 40; /home/nia/sqljobs/macros.sh
 #* * * * * sleep 50; /home/nia/sqljobs/macros.sh
+
+# lets get to the variables.
+
 SQLPASS="sqlpass"
 APIKEY="apikey"
 DB="grupochat"
