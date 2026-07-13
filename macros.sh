@@ -26,7 +26,7 @@
 
 # lets get to the variables.
 
-SQLPASS="xxxxx"
+SQLPASS="xxxxxxx"
 APIKEY="xxxxx"
 
 DB="grupochat"
@@ -35,6 +35,10 @@ GROUP_ID="2"
 DBUSER="nia"
 SENDER="ptcruiser"
 STATIC_URL="https://static.neveralonerc.org"
+
+# should be a relative path like ~/tmp/chatbot.lck
+# this is proving to be a pain in the ass, probably something trivial. fuck it. ship it.
+# change to suit your needs if you dont want to use /tmp 
 
 LOCK="/tmp/chatbot.lock"
 # URL to server
@@ -55,8 +59,10 @@ trap "rm -f $LOCK" EXIT
 touch "$LOCK"
 
 # should be a relative path like ~/tmp/lastread.txt
-# doesnt work unless i hard code it. fuck it. ship it.
-COUNTFILE="/home/nia/tmp/lastread.txt"
+# this is proving to be a pain in the ass, probably something trivial. fuck it. ship it.
+# change to suit your needs if you dont want to use /tmp 
+
+COUNTFILE="/tmp/lastread.txt"
 
 if [ ! -f "$COUNTFILE" ]; then
     echo "$COUNTFILE doesnt exist, creating it."
@@ -69,6 +75,10 @@ echo "DEBUG LAST=[$LAST]"
 
 # adding a cooldown feature so a theoretical meetingchair doesnt spam the chat by running !start !readings 
 # etc repeatedly.
+
+# should be a relative path like ~/tmp/lastread.txt
+# this is proving to be a pain in the ass, probably something trivial. fuck it. ship it.
+# change to suit your needs if you dont want to use /tmp 
 
 COOLDOWN_DIR="/tmp/macro_cooldowns"
 mkdir -p "$COOLDOWN_DIR"
