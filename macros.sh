@@ -281,7 +281,8 @@ do
 	  # This validates that the sender has group_role_id 3 or 6 in group 2. All other macros remain available to everyone.
         "!gong"*)
             if [[ "$CHAIR_AUTHORIZED" -eq 1 && "$TRIGGERED16" -eq 0 ]]; then
-
+# if you want to change from default of 300 seconds, to .. say.. 600 seconds... change this to
+#               if macro_ready gong 600; then
                 if macro_ready gong; then
                     echo "gong macro triggered by authorized user_id $USERID"
 
@@ -323,7 +324,8 @@ do
 	 # This validates that the sender has group_role_id 3 or 6 in group 2. All other macros remain available to everyone.
         "!sober"*)
             if [[ "$CHAIR_AUTHORIZED" -eq 1 && "$TRIGGERED19" -eq 0 ]]; then
-
+# if you want to change from default of 300 seconds, to .. say.. 600 seconds... change this to
+#               if macro_ready sober 600; then
                 if macro_ready sober; then
                     echo "sober-talk macro triggered by authorized user_id $USERID"
 
