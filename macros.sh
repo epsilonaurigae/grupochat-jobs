@@ -76,7 +76,7 @@ echo "DEBUG LAST=[$LAST]"
 # adding a cooldown feature so a theoretical meetingchair doesnt spam the chat by running !start !readings 
 # etc repeatedly.
 
-# should be a relative path like ~/tmp/lastread.txt
+# should be a relative path like ~/tmp/macro_cooldowns/
 # this is proving to be a pain in the ass, probably something trivial. fuck it. ship it.
 # change to suit your needs if you dont want to use /tmp 
 
