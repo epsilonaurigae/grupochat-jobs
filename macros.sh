@@ -15,6 +15,8 @@
 
 # getting down to business...
 # horrible way of doing this, when it can be invoked directly from PHP when a message is sent
+# (which, itself, presents other locking/simultaneous/concurrent run headaches)
+
 # until then, invoke from crontab:
 # example
 #* * * * * /home/nia/sqljobs/macros.sh
@@ -479,12 +481,6 @@ do
     fi
 
 done < <(
-#mysql -B -N -u "$DBUSER" -p$SQLPASS $DB \
-#-e "SELECT group_message_id, original_message
-#FROM gr_group_messages
-#WHERE group_message_id > $LAST
-#ORDER BY group_message_id;"
-#)
 mysql -B -N -u "$DBUSER" -p"$SQLPASS" "$DB" \
 -e "SELECT
         m.group_message_id,
